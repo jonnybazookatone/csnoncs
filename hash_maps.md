@@ -1,5 +1,7 @@
 ## Hash maps
 
+*Note: this is not meant to replace the extensive information found and copied from https://en.wikipedia.org/wiki/Hash_table*.
+
 A hash map is a structure that implements *associative arrays*, ie., an array for which a given key points to a given index. For example, in Python:
 ```python
 x = {
@@ -76,3 +78,7 @@ Incremental resizing is normally used, whereby the hash map is not completely re
  * Caches, eg., Redis, Varnish
  * Sets
  * Unique data representation, eg., Lisp does not store the same string twice, but instead uses a hash. This technique is called **hash consing**.
+
+## Hash maps in Python
+
+TBD
