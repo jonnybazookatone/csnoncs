@@ -66,6 +66,8 @@ Some hashing functions can lead to more than one value existing in a given bucke
 
 * **2-choice Hashing**: 2 hashing functions are used. The key is placed in the slot that has fewer keys.
 
+* **Leapfrog probing**: At each bucket there are also two delta values stored. The first delta refers to the **probe length for the next item, in a different bucket**, and the second to the **probe length for the next iteme in the same bucket**. If either are 0, that means it is the end of the probe length for that bucket. When the second delta is 0, it carries on using linear probing. So it can be slow on the first insertion, however, is faster on look-up. A nice description is given <a href='http://preshing.com/20160314/leapfrog-probing/'>here</a>.
+
 ### Dynamic Resizing
 Tables may reach a load larger than that needed, and as a result, need to resize (and thus rehash). The alternate is true when the table can reduce its size to reduce memory consumption.
 
@@ -81,4 +83,8 @@ Incremental resizing is normally used, whereby the hash map is not completely re
 
 ## Hash maps in Python
 
-TBD
+Python uses *open addresses* when trying to handle hash collisions. The probe length is defined by a *pseudo-random* process. There is a nice description <a href='http://www.shutupandship.com/2012/02/how-hash-collisions-are-resolved-in.html'>here</a>.
+
+## Hash maps in Java
+
+Java uses *linked lists* for JVMs < 7, but now uses *tree* style storing of items in the linked list, ie., sorted entries in the linked-list, which can speed up look-up times to O(logn) rather than O(n). Nice descriptions can be seen here about <a href="http://javarevisited.blogspot.in/2011/02/how-hashmap-works-in-java.html">Java HashMap</a> and a <a href='http://www.nurkiewicz.com/2014/04/hashmap-performance-improvements-in.html'>performance of Java 7 vs Java 8 (linked list chaining, vs. tree)</a>
