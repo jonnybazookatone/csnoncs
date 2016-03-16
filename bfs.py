@@ -59,7 +59,7 @@ if __name__ == "__main__":
         g: [c],
         h: [e]
     }
-bfs(graph, 'A') # {'B', 'C', 'A', 'F', 'D', 'E'}
+
     print breadth_first_search(tree, root=a)
 
     print str(a)
