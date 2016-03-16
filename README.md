@@ -4,3 +4,4 @@
 
  * [Hashmaps](hash_maps.md)
  * [Linked lists](linked_lists.md)
+ * [Breadth-first search](breadth_first_search.md)
