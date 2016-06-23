@@ -51,6 +51,7 @@ head = prepend(new_head, head)
 
 print get_length(head)
 >>> 4
+```
 
 # Alternative linked lists
 
